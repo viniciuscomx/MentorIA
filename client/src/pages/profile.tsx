@@ -11,6 +11,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import Sidebar from "@/components/sidebar";
+import MobileNav from "@/components/mobile-nav";
 
 export default function Profile() {
   const { user } = useAuth();
@@ -52,40 +54,47 @@ export default function Profile() {
   ];
   
   return (
-    <div className="container mx-auto py-8 px-4">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-        <h1 className="text-3xl font-bold text-white">Meu Perfil</h1>
-        
-        <div className="flex gap-2">
-          {isEditing ? (
-            <>
-              <Button 
-                variant="outline" 
-                className="border-gray-700 text-gray-300 hover:text-white"
-                onClick={() => setIsEditing(false)}
-              >
-                Cancelar
-              </Button>
-              <Button 
-                type="submit"
-                form="profile-form"
-                className="bg-primary hover:bg-primary/90"
-                disabled={isSaving}
-              >
-                {isSaving ? "Salvando..." : "Salvar Alterações"}
-              </Button>
-            </>
-          ) : (
-            <Button 
-              onClick={() => setIsEditing(true)}
-              className="bg-primary hover:bg-primary/90"
-            >
-              <Settings className="h-4 w-4 mr-2" />
-              Editar Perfil
-            </Button>
-          )}
-        </div>
-      </div>
+    <div className="flex min-h-screen bg-black text-white">
+      <Sidebar />
+      
+      <main className="flex-1 pb-16 md:pb-0">
+        <div className="p-6 max-w-7xl mx-auto space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-white">Meu Perfil</h1>
+              <p className="text-gray-400 mt-1">Gerencie suas informações pessoais</p>
+            </div>
+            
+            <div className="mt-4 sm:mt-0 flex gap-2">
+              {isEditing ? (
+                <>
+                  <Button 
+                    variant="outline" 
+                    className="border-gray-700 text-gray-300 hover:text-white"
+                    onClick={() => setIsEditing(false)}
+                  >
+                    Cancelar
+                  </Button>
+                  <Button 
+                    type="submit"
+                    form="profile-form"
+                    className="bg-primary hover:bg-primary/90"
+                    disabled={isSaving}
+                  >
+                    {isSaving ? "Salvando..." : "Salvar Alterações"}
+                  </Button>
+                </>
+              ) : (
+                <Button 
+                  onClick={() => setIsEditing(true)}
+                  className="bg-primary hover:bg-primary/90"
+                >
+                  <Settings className="h-4 w-4 mr-2" />
+                  Editar Perfil
+                </Button>
+              )}
+            </div>
+          </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-6">
@@ -489,6 +498,10 @@ export default function Profile() {
           </Tabs>
         </div>
       </div>
+        </div>
+      </main>
+      
+      <MobileNav />
     </div>
   );
 }
