@@ -28,16 +28,16 @@ import { Loader2 } from "lucide-react";
 // Extend the schema with validation rules
 const userFormSchema = insertUserSchema.extend({
   username: z.string().min(3, {
-    message: "Username must be at least 3 characters",
+    message: "Nome de usuário deve ter pelo menos 3 caracteres",
   }),
   password: z.string().min(6, {
-    message: "Password must be at least 6 characters",
+    message: "A senha deve ter pelo menos 6 caracteres",
   }),
 });
 
 const loginFormSchema = z.object({
-  username: z.string().min(1, "Username is required"),
-  password: z.string().min(1, "Password is required"),
+  username: z.string().min(1, "Nome de usuário é obrigatório"),
+  password: z.string().min(1, "Senha é obrigatória"),
 });
 
 export default function AuthForm() {

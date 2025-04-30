@@ -97,8 +97,8 @@ export default function KnowledgeForm() {
       }
     } catch (error) {
       toast({
-        title: "Submission failed",
-        description: error instanceof Error ? error.message : "An unexpected error occurred",
+        title: "Falha no envio",
+        description: error instanceof Error ? error.message : "Ocorreu um erro inesperado",
         variant: "destructive",
       });
     } finally {
