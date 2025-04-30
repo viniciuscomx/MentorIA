@@ -49,7 +49,9 @@ export const learningPaths = pgTable("learning_paths", {
   title: text("title").notNull(),
   description: text("description").notNull(),
   difficulty: text("difficulty").notNull(),
+  category: text("category").notNull(),
   estimatedHours: integer("estimated_hours").notNull(),
+  moduleCount: integer("module_count").default(0).notNull(),
   progress: integer("progress").default(0).notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -58,7 +60,9 @@ export const insertLearningPathSchema = createInsertSchema(learningPaths).pick({
   title: true,
   description: true,
   difficulty: true,
+  category: true,
   estimatedHours: true,
+  moduleCount: true,
 });
 
 export type InsertLearningPath = z.infer<typeof insertLearningPathSchema>;
