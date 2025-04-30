@@ -11,6 +11,9 @@ import KnowledgeAssessment from "@/pages/knowledge-assessment";
 import LearningPath from "@/pages/learning-path";
 import ModuleView from "@/pages/module-view";
 import NotFound from "@/pages/not-found";
+import Support from "@/pages/support";
+import Certificates from "@/pages/certificates";
+import Profile from "@/pages/profile";
 
 function Router() {
   return (
@@ -20,7 +23,11 @@ function Router() {
       <ProtectedRoute path="/dashboard" component={Dashboard} />
       <ProtectedRoute path="/assessment" component={KnowledgeAssessment} />
       <ProtectedRoute path="/learning-path/:id" component={LearningPath} />
+      <ProtectedRoute path="/learning-paths" component={Dashboard} />
       <ProtectedRoute path="/module/:id" component={ModuleView} />
+      <ProtectedRoute path="/certificates" component={Certificates} />
+      <ProtectedRoute path="/support" component={Support} />
+      <ProtectedRoute path="/profile" component={Profile} />
       <Route component={NotFound} />
     </Switch>
   );
