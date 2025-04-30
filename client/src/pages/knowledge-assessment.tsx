@@ -5,7 +5,7 @@ import { Brain } from "lucide-react";
 
 export default function KnowledgeAssessment() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-black text-white">
       <Sidebar />
       
       <main className="flex-1 pb-16 md:pb-0">
@@ -14,10 +14,10 @@ export default function KnowledgeAssessment() {
             <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
               <Brain className="h-6 w-6 text-primary" />
             </div>
-            <h1 className="text-2xl font-bold">Knowledge Assessment</h1>
-            <p className="text-gray-500 mt-2 max-w-xl mx-auto">
-              Tell us about your current knowledge, goals, and learning preferences. Our AI will
-              generate a personalized learning path tailored specifically to your needs.
+            <h1 className="text-2xl font-bold text-white">Criar Nova Trilha</h1>
+            <p className="text-gray-400 mt-2 max-w-xl mx-auto">
+              Conte-nos sobre seu conhecimento atual, objetivos e preferências de aprendizado. 
+              Nossa IA irá gerar uma trilha de aprendizado personalizada especificamente para suas necessidades.
             </p>
           </div>
           

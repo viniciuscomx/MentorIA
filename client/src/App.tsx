@@ -22,7 +22,7 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <ProtectedRoute path="/" component={Dashboard} />
       <ProtectedRoute path="/dashboard" component={Dashboard} />
-      <ProtectedRoute path="/assessment" component={KnowledgeAssessment} />
+      <ProtectedRoute path="/knowledge-assessment" component={KnowledgeAssessment} />
       <ProtectedRoute path="/learning-path/:id" component={LearningPath} />
       <ProtectedRoute path="/learning-paths" component={LearningPaths} />
       <ProtectedRoute path="/module/:id" component={ModuleView} />
