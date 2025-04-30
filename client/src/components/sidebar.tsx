@@ -3,7 +3,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { 
   BookOpen, LayoutDashboard, Lightbulb, 
   LogOut, Settings, User, Sparkles, 
-  GraduationCap, Award
+  GraduationCap, Award, HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -39,6 +39,11 @@ export default function Sidebar() {
       icon: <User className="w-5 h-5 mr-3" />,
       href: "/profile",
     },
+    {
+      label: "Suporte",
+      icon: <HelpCircle className="w-5 h-5 mr-3" />,
+      href: "/support",
+    },
   ];
 
   return (
@@ -54,7 +59,7 @@ export default function Sidebar() {
 
       <nav className="flex-grow py-5 overflow-y-auto">
         <div className="px-5 mb-6">
-          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider px-3 mb-3">Menu Principal</h3>
+          <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider px-3 mb-3">Menu Principal</h3>
           <ul className="space-y-1">
             {navItems.map((item) => (
               <li key={item.href} className="group">
@@ -62,8 +67,8 @@ export default function Sidebar() {
                   <a className={cn(
                     "flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
                     location === item.href || (location === "/" && item.href === "/dashboard")
-                      ? "bg-primary/20 text-primary"
-                      : "text-gray-400 hover:bg-gray-800 hover:text-white"
+                      ? "bg-primary/20 text-primary font-semibold"
+                      : "text-gray-300 hover:bg-gray-800 hover:text-white"
                   )}>
                     {item.icon}
                     {item.label}
@@ -77,10 +82,10 @@ export default function Sidebar() {
         <Separator className="bg-gray-800 my-4" />
 
         <div className="px-5 mb-6">
-          <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider px-3 mb-3">Trilhas Ativas</h3>
+          <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider px-3 mb-3">Trilhas Ativas</h3>
           <ul className="space-y-1">
             {/* These would be populated from API data */}
-            <li className="text-sm text-gray-500 italic px-3 py-2">
+            <li className="text-sm text-gray-400 italic px-3 py-2">
               Nenhuma trilha ativa
             </li>
           </ul>

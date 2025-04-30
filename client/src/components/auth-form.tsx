@@ -101,7 +101,7 @@ export default function AuthForm() {
                         <Input 
                           placeholder="Digite seu nome de usuário" 
                           {...field} 
-                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary" 
+                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary text-white" 
                         />
                       </FormControl>
                       <FormMessage />
@@ -119,7 +119,7 @@ export default function AuthForm() {
                           type="password"
                           placeholder="Digite sua senha"
                           {...field}
-                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary"
+                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary text-white"
                         />
                       </FormControl>
                       <FormMessage />
@@ -186,7 +186,7 @@ export default function AuthForm() {
                         <Input 
                           placeholder="Escolha um nome de usuário" 
                           {...field} 
-                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary"
+                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary text-white"
                         />
                       </FormControl>
                       <FormMessage />
@@ -204,7 +204,7 @@ export default function AuthForm() {
                           type="password"
                           placeholder="Escolha uma senha"
                           {...field}
-                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary"
+                          className="bg-gray-900 border-gray-700 focus-visible:ring-primary text-white"
                         />
                       </FormControl>
                       <FormMessage />
